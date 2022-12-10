@@ -5,5 +5,5 @@ RANDOM=$$
 for i in `seq 10`
 do
 	
-	echo "$i", "$RANDOM"
+	echo "$i", "$RANDOM"  >>inputFile
 done

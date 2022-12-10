@@ -13,9 +13,9 @@ docker pull infracloudio/csvserver:latest
 # run this image to create container
 docker run csvserver
 
-# created a gencsv script & inputFile for content creation
+# created a gencsv script and content generate and stored in inputFile automatically
 nano gencsv.sh
-nano inputFile
+
 
 # set permission for gencsv.sh and run this script and it'll generate random numbers
 chmod +x gencsv.sh
