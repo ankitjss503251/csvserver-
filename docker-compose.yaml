@@ -17,6 +17,9 @@ services:
       - "9393:5000"
     volumes:
       - .:/code
+      - .:/tmp
+    depends_on:
+      - redis
 #    environment:
 #      FLASK_DEBUG: True
   redis:

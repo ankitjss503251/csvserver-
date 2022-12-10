@@ -1,11 +1,9 @@
 import time
 
 import redis
-from flask import Flask, render_template, request
+from flask import Flask
 import logging
-#from werkzeug.utils 
-#import inputFile
-#from flask import Flask, render_template, request
+import  home/ankit/infra_cloud_assingment/Dockerfile/prometheus-csvserver/inputFile
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
@@ -40,27 +38,7 @@ def main():
     app.logger.warning("Warning log info")
     app.logger.error("Error log info")
     app.logger.critical("Critical log info")
-    return "testing logging levels."
-    return app.logger.debug
-    
+    #return "testing logging levels."
+    return inputFile
 if __name__ == '__main__':
     app.run(debug=True)
-
-#@app.route('/upload')
-#def upload_file():
-#   return render_template('inputFile')
-
-#@app.route('/uploader', methods = ['GET', 'POST'])
-#def upload_file():
-#   if request.method == 'POST':
-#      f = request.files['file']
-#      f.save(secure_filename(f.filename))
-#      return 'file uploaded successfully'
-		
-#if __name__ == '__main__':
-#   app.run(debug = True)
-
-#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-
-
