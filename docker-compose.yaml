@@ -28,7 +28,7 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - '/home/ankit/infra_cloud_assingment/Dockerfile/prometheus.yml:/etc/prometheus/prometheus.yml'
+      - '/home/ankit/infra_cloud_assingment/Dockerfile/prometheus-csvserver/prometheus.yml:/etc/prometheus/prometheus.yml'
       #- ./configs/:/etc/prometheus/
       #- prometheus_data:/prometheus
     #command:
