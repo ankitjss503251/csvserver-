@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 30s
+  scrape_timeout: 10s
+
+rule_files:
+  - alert.yml
+
+scrape_configs:
+  - job_name: services
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - 'prometheus:9090'
+          #- 'infracloud.io:9393'
+          - 'localhost:9393'
+#          - 'idonotexists:564'

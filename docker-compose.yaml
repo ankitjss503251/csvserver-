@@ -1,0 +1,43 @@
+version: "3.1"
+volumes:
+    prometheus_data: {}
+services:
+#  mycsvserver:
+  web:
+#    image: infracloudio/csvserver:latest
+#    container_name: csvserver_container
+    restart: always
+#    ports:
+#      - 9393:5000
+#    volumes:
+ #     - /home/ankit/infra_cloud_assingment/Dockerfile/gencsv.sh:/etc/inputfile/gencsv.sh
+#  web:
+    build: .
+    ports:
+      - "9393:5000"
+    volumes:
+      - .:/code
+#    environment:
+#      FLASK_DEBUG: True
+  redis:
+    image: "redis:alpine"
+
+
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    restart: always
+    network_mode: host
+    volumes:
+      - '/home/ankit/infra_cloud_assingment/Dockerfile/prometheus.yml:/etc/prometheus/prometheus.yml'
+      #- ./configs/:/etc/prometheus/
+      #- prometheus_data:/prometheus
+    #command:
+     # - '--config.file=/etc/prometheus/prometheus.yml'
+      #- '--storage.tsdb.path=/prometheus'
+      #- '--storage.tsdb.retention=31d'
+      #- '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      #- '--web.console.templates=/usr/share/prometheus/consoles'
+      #- ' --web.enable-lifecycle'
+      
+    ports:
+      - '9090:9090'
